@@ -1,0 +1,183 @@
+// Every word on screen, in English (the default), French and Spanish. The language itself, the number format and the
+// strings of the page's header and footer are shared by the collection (../../../shared/i18n.js).
+import {LANG, LANGS, makeT, nf} from '../../../shared/i18n.js';
+
+export {LANG, LANGS, nf};
+
+const S = {
+  // ------------------------------------------------------------ console: title and clock
+  title: {en: 'Quantum', fr: 'Quantum', es: 'Quantum'},
+  subtitle: {
+    en: 'PHOTONIC &nbsp;•&nbsp; 12 QUBITS &nbsp;•&nbsp; 24 MODES &nbsp;•&nbsp; 80 MHZ',
+    fr: 'PHOTONIQUE &nbsp;•&nbsp; 12 QUBITS &nbsp;•&nbsp; 24 MODES &nbsp;•&nbsp; 80 MHZ',
+    es: 'FOTÓNICO &nbsp;•&nbsp; 12 CÚBITS &nbsp;•&nbsp; 24 MODOS &nbsp;•&nbsp; 80 MHZ',
+  },
+  model: {
+    en: 'AFTER QUANDELA’S BELENOS · NOT AFFILIATED',
+    fr: 'D’APRÈS LE BELENOS DE QUANDELA · SANS LIEN',
+    es: 'SEGÚN EL BELENOS DE QUANDELA · SIN RELACIÓN',
+  },
+  physTime: {en: 'PHYSICAL TIME IN THE SHOT', fr: 'TEMPS PHYSIQUE DANS LE TIR', es: 'TIEMPO FÍSICO EN EL DISPARO'},
+  onScreen: {en: (r, x) => `1 S ON SCREEN = ${r} <span class="mu">&nbsp;· SLOWED ×${x}</span>`, fr: (r, x) => `1 S À L’ÉCRAN = ${r} <span class="mu">&nbsp;· RALENTI ×${x}</span>`, es: (r, x) => `1 S EN PANTALLA = ${r} <span class="mu">&nbsp;· RALENTIZADO ×${x}</span>`},
+  barEmit: {en: 'EMISSIONS', fr: 'ÉMISSIONS', es: 'EMISIONES'},
+  barChip: {en: 'CHIP', fr: 'PUCE', es: 'CHIP'},
+  barClick: {en: 'CLICK', fr: 'CLIC', es: 'CLIC'},
+  // ------------------------------------------------------------ source
+  srcTitle: {en: 'SINGLE-PHOTON SOURCE', fr: 'SOURCE DE PHOTONS UNIQUES', es: 'FUENTE DE FOTONES ÚNICOS'},
+  pulses: {en: (ns) => `LASER PULSES · ${ns} NS`, fr: (ns) => `IMPULSIONS LASER · ${ns} NS`, es: (ns) => `PULSOS LÁSER · ${ns} NS`},
+  onePhoton: {en: '→ 1 PHOTON EACH', fr: '→ 1 PHOTON CHACUNE', es: '→ 1 FOTÓN CADA UNO'},
+  emission: {en: 'EMISSION', fr: 'ÉMISSION', es: 'EMISIÓN'},
+  srcFacts: {
+    en: (b) => `λ ${b('928')} nm &nbsp;·&nbsp; lifetime ${b('92')} ps &nbsp;·&nbsp; ${b('5')} K<br>g²(0) ${b(nf(0.0073, 4))} &nbsp;·&nbsp; indistinguishability ${b(nf(94.4, 1))} %`,
+    fr: (b) => `λ ${b('928')} nm &nbsp;·&nbsp; durée de vie ${b('92')} ps &nbsp;·&nbsp; ${b('5')} K<br>g²(0) ${b(nf(0.0073, 4))} &nbsp;·&nbsp; indiscernabilité ${b(nf(94.4, 1))} %`,
+    es: (b) => `λ ${b('928')} nm &nbsp;·&nbsp; vida media ${b('92')} ps &nbsp;·&nbsp; ${b('5')} K<br>g²(0) ${b(nf(0.0073, 4))} &nbsp;·&nbsp; indistinguibilidad ${b(nf(94.4, 1))} %`,
+  },
+  srcData: {en: 'InGaAs micropillar · Ascella data [Maring 2024]', fr: 'Micropilier InGaAs · données Ascella [Maring 2024]', es: 'Micropilar de InGaAs · datos de Ascella [Maring 2024]'},
+  // ------------------------------------------------------------ losses
+  lossTitle: {en: 'TRANSMISSION PER STAGE', fr: 'TRANSMISSION PAR ÉTAGE', es: 'TRANSMISIÓN POR ETAPA'},
+  'eta:source': {en: 'Source (1st lens)', fr: 'Source (1re lentille)', es: 'Fuente (1.ª lente)'},
+  'eta:fibre': {en: 'Fibre + filter', fr: 'Fibre + filtre', es: 'Fibra + filtro'},
+  'eta:demux': {en: 'Demultiplexer', fr: 'Démultiplexeur', es: 'Demultiplexor'},
+  'eta:chip': {en: 'Photonic chip', fr: 'Puce photonique', es: 'Chip fotónico'},
+  'eta:det': {en: 'SNSPD detectors', fr: 'Détecteurs SNSPD', es: 'Detectores SNSPD'},
+  totalPhoton: {en: 'Total per photon', fr: 'Total par photon', es: 'Total por fotón'},
+  together: {
+    en: (n, hz) => `${n} photons together: (80 MHz / ${n}) · η<sup>${n}</sup> = ${hz} Hz`,
+    fr: (n, hz) => `${n} photons ensemble : (80 MHz / ${n}) · η<sup>${n}</sup> = ${hz} Hz`,
+    es: (n, hz) => `${n} fotones juntos: (80 MHz / ${n}) · η<sup>${n}</sup> = ${hz} Hz`,
+  },
+  checkAscella: {
+    en: (hz) => `check: n = 6 → ${hz} Hz calc., ~4 Hz on Ascella · * inferred`,
+    fr: (hz) => `vérif. : n = 6 → ${hz} Hz calc., ~4 Hz sur Ascella · * déduit`,
+    es: (hz) => `n = 6 → ${hz} Hz calc., ~4 Hz en Ascella · * deducido`,
+  },
+  // ------------------------------------------------------------ transport
+  pause: {en: '❚❚ &nbsp;PAUSE', fr: '❚❚ &nbsp;PAUSE', es: '❚❚ &nbsp;PAUSA'},
+  play: {en: '▶ &nbsp;PLAY', fr: '▶ &nbsp;LECTURE', es: '▶ &nbsp;SEGUIR'},
+  reseed: {en: 'NEW CIRCUIT U', fr: 'NOUVEAU CIRCUIT U', es: 'NUEVO CIRCUITO U'},
+  slowmo: {en: 'SLOW MOTION', fr: 'RALENTI', es: 'CÁMARA LENTA'},
+  perShot: {en: 'PHOTONS PER SHOT', fr: 'PHOTONS PAR TIR', es: 'FOTONES POR DISPARO'},
+  nPhotons: {en: (n) => `${n} PHOTONS`, fr: (n) => `${n} PHOTONS`, es: (n) => `${n} FOTONES`},
+  auto: {en: 'AUTO', fr: 'AUTO', es: 'AUTO'},
+  // ------------------------------------------------------------ stage panel
+  shot: {en: (s, n) => `SHOT <b>${s}</b> &nbsp;<span class="mu">${n} PHOTONS</span>`, fr: (s, n) => `TIR <b>${s}</b> &nbsp;<span class="mu">${n} PHOTONS</span>`, es: (s, n) => `DISPARO <b>${s}</b> &nbsp;<span class="mu">${n} FOTONES</span>`},
+  dualRail: {en: 'DUAL-RAIL', fr: 'DOUBLE RAIL', es: 'DOBLE RAÍL'},
+  temps: {
+    en: (acc) => `SOURCE <b style="color:${acc}">5 K</b> &nbsp;·&nbsp; SNSPD <b style="color:${acc}">~2.5 K</b><span class="mu"> (EST.)</span>`,
+    fr: (acc) => `SOURCE <b style="color:${acc}">5 K</b> &nbsp;·&nbsp; SNSPD <b style="color:${acc}">~2,5 K</b><span class="mu"> (ESTIM.)</span>`,
+    es: (acc) => `FUENTE <b style="color:${acc}">5 K</b> &nbsp;·&nbsp; SNSPD <b style="color:${acc}">~2,5 K</b><span class="mu"> (EST.)</span>`,
+  },
+  'st:laser': {en: 'Pulsed laser', fr: 'Laser pulsé', es: 'Láser pulsado'},
+  'st:source': {en: 'Source', fr: 'Source', es: 'Fuente'},
+  'st:demux': {en: 'Demultiplexer', fr: 'Démultiplexeur', es: 'Demultiplexor'},
+  'st:chip': {en: 'Photonic chip', fr: 'Puce photonique', es: 'Chip fotónico'},
+  'st:detect': {en: 'Detectors', fr: 'Détecteurs', es: 'Detectores'},
+  'st:tagger': {en: 'Coincidences', fr: 'Coïncidences', es: 'Coincidencias'},
+  'stsub:laser': {en: '80 MHZ · EXCITATION', fr: '80 MHZ · EXCITATION', es: '80 MHZ · EXCITACIÓN'},
+  'stsub:source': {en: 'QUANTUM DOT · 5 K', fr: 'BOÎTE QUANTIQUE · 5 K', es: 'PUNTO CUÁNTICO · 5 K'},
+  'stsub:demux': {en: 'TIME → SPACE', fr: 'TEMPS → ESPACE', es: 'TIEMPO → ESPACIO'},
+  'stsub:chip': {en: '24-MODE INTERFEROMETER', fr: 'INTERFÉROMÈTRE 24 MODES', es: 'INTERFERÓMETRO 24 MODOS'},
+  'stsub:detect': {en: 'SNSPD · 92 %', fr: 'SNSPD · 92 %', es: 'SNSPD · 92 %'},
+  'stsub:tagger': {en: 'TIME TAGGER · 1 NS', fr: 'HORODATEUR · 1 NS', es: 'ETIQUETADOR · 1 NS'},
+  // the path strip under the machine
+  'strip:laser': {en: 'LASER', fr: 'LASER', es: 'LÁSER'},
+  'strip:source': {en: 'SOURCE', fr: 'SOURCE', es: 'FUENTE'},
+  'strip:demux': {en: 'DEMUX', fr: 'DÉMUX', es: 'DEMUX'},
+  'strip:chip': {en: 'CHIP', fr: 'PUCE', es: 'CHIP'},
+  'strip:detect': {en: 'SNSPD', fr: 'SNSPD', es: 'SNSPD'},
+  'strip:tagger': {en: 'TAGGER', fr: 'HORODAT.', es: 'ETIQUET.'},
+  path: {
+    en: '<span style="color:#16181b">THE PHOTON’S PATH</span> &nbsp;— &nbsp;CLICK TO GO THERE',
+    fr: '<span style="color:#16181b">LE TRAJET DU PHOTON</span> &nbsp;— &nbsp;CLIQUER POUR Y ALLER',
+    es: '<span style="color:#16181b">EL CAMINO DEL FOTÓN</span> &nbsp;— &nbsp;CLIC PARA IR',
+  },
+  hint: {
+    en: 'DRAG TO ORBIT &nbsp;·&nbsp; SCROLL TO ZOOM &nbsp;·&nbsp; H HIDES THE CONSOLE',
+    fr: 'GLISSER POUR TOURNER &nbsp;·&nbsp; MOLETTE POUR ZOOMER &nbsp;·&nbsp; H MASQUE LA CONSOLE',
+    es: 'ARRASTRAR PARA GIRAR &nbsp;·&nbsp; RUEDA PARA ACERCAR &nbsp;·&nbsp; H OCULTA LA CONSOLA',
+  },
+  // ------------------------------------------------------------ coincidences
+  coinTitle: {en: 'COINCIDENCES', fr: 'COÏNCIDENCES', es: 'COINCIDENCIAS'},
+  couplerOut: {en: (d) => `COUPLER OUTPUTS · δ = ${d} PS`, fr: (d) => `SORTIES DU COUPLEUR · δ = ${d} PS`, es: (d) => `SALIDAS DEL ACOPLADOR · δ = ${d} PS`},
+  topPatterns: {en: (k, n) => `${k} MOST LIKELY PATTERNS · OF ${n}`, fr: (k, n) => `${k} MOTIFS LES PLUS PROBABLES / ${n}`, es: (k, n) => `${k} PATRONES MÁS PROBABLES / ${n}`},
+  theory: {en: 'theory', fr: 'théorie', es: 'teoría'},
+  measured: {en: 'measured', fr: 'mesuré', es: 'medido'},
+  // ------------------------------------------------------------ HOM / Perceval
+  distinguishable: {en: 'DISTINGUISHABLE · 50 %', fr: 'DISCERNABLES · 50 %', es: 'DISTINGUIBLES · 50 %'},
+  delayAxis: {en: 'DELAY δ BETWEEN THE PHOTONS (PS)', fr: 'RETARD δ ENTRE LES PHOTONS (PS)', es: 'RETARDO δ ENTRE LOS FOTONES (PS)'},
+  pvHead: {en: '# the circuit, the QPU, the input state', fr: '# le circuit, le QPU, l’état d’entrée', es: '# el circuito, el QPU, el estado de entrada'},
+  pvQubits: {en: (n) => `# ${n} qubits |0⟩: 1 photon/pair`, fr: (n) => `# ${n} qubits |0⟩ : 1 photon/paire`, es: (n) => `# ${n} cúbits |0⟩: 1 fotón/par`},
+  pvCompile: {en: '# compile: U → 276 MZI → 552 φ', fr: '# compil. : U → 276 MZI → 552 φ', es: '# compilar: U → 276 MZI → 552 φ'},
+  pvTranspile: {en: '# transpile: φ = A·V² + b', fr: '# transpilation : φ = A·V² + b', es: '# transpilar: φ = A·V² + b'},
+  // ------------------------------------------------------------ toggles
+  grpView: {en: 'VIEW', fr: 'VUE', es: 'VISTA'},
+  grpCut: {en: 'CRYOSTAT CUTAWAY', fr: 'COUPE DES CRYOSTATS', es: 'CORTE DE LOS CRIOSTATOS'},
+  grpLayers: {en: 'LAYERS', fr: 'CALQUES', es: 'CAPAS'},
+  'cam:hero': {en: 'MACHINE', fr: 'MACHINE', es: 'MÁQUINA'},
+  'cam:source': {en: 'SOURCE', fr: 'SOURCE', es: 'FUENTE'},
+  'cam:demux': {en: 'DEMUX', fr: 'DÉMUX', es: 'DEMUX'},
+  'cam:chip': {en: 'CHIP', fr: 'PUCE', es: 'CHIP'},
+  'cam:detect': {en: 'DETECTORS', fr: 'DÉTECTEURS', es: 'DETECTORES'},
+  'cam:perceval': {en: 'PERCEVAL', fr: 'PERCEVAL', es: 'PERCEVAL'},
+  'cam:hom': {en: 'HOM', fr: 'HOM', es: 'HOM'},
+  'cam:tour': {en: 'MACHINE', fr: 'MACHINE', es: 'MÁQUINA'},
+  'cut:glass': {en: 'GLASS', fr: 'VERRE', es: 'VIDRIO'},
+  'cut:section': {en: 'SECTION', fr: 'SECTION', es: 'SECCIÓN'},
+  'cut:solid': {en: 'SOLID', fr: 'PLEIN', es: 'SÓLIDO'},
+  'ov:callouts': {en: 'CALLOUTS', fr: 'LÉGENDES', es: 'ETIQUETAS'},
+  'ov:isolate': {en: 'ISOLATE', fr: 'ISOLER', es: 'AISLAR'},
+  'ov:doors': {en: 'DOORS', fr: 'PORTES', es: 'PUERTAS'},
+  'ov:charts': {en: 'CHARTS', fr: 'GRAPHES', es: 'GRÁFICOS'},
+  // ------------------------------------------------------------ captions under the machine
+  'foot:laser': {en: 'A laser pulse every 12.5 ns excites the quantum dot', fr: 'Une impulsion laser toutes les 12,5 ns excite la boîte quantique', es: 'Un pulso láser cada 12,5 ns excita el punto cuántico'},
+  'foot:source': {en: 'Each pulse makes the quantum dot emit exactly one photon', fr: 'Chaque impulsion fait émettre exactement un photon à la boîte quantique', es: 'Cada pulso hace que el punto cuántico emita exactamente un fotón'},
+  'foot:demux': {
+    en: 'Emitted one after another, the photons take fibres of different lengths, so they arrive together',
+    fr: 'Émis l’un après l’autre, les photons suivent des fibres de longueurs différentes, si bien qu’ils arrivent ensemble',
+    es: 'Emitidos uno tras otro, los fotones recorren fibras de distinta longitud, así que llegan juntos',
+  },
+  'foot:chip': {
+    en: 'The photons interfere in 276 Mach-Zehnder interferometers tuned by thermal phase shifters',
+    fr: 'Les photons interfèrent dans 276 interféromètres de Mach-Zehnder réglés par des déphaseurs thermiques',
+    es: 'Los fotones interfieren en 276 interferómetros de Mach-Zehnder ajustados por desfasadores térmicos',
+  },
+  'foot:detect': {en: 'A superconducting nanowire at ~2.5 K switches when a photon hits it', fr: 'Un nanofil supraconducteur à ~2,5 K bascule quand un photon le frappe', es: 'Un nanohilo superconductor a ~2,5 K conmuta cuando le llega un fotón'},
+  'foot:tagger': {en: 'Clicks less than 1 ns apart make one sample: an output pattern', fr: 'Des clics à moins de 1 ns d’écart forment un échantillon : un motif de sortie', es: 'Los clics separados menos de 1 ns forman una muestra: un patrón de salida'},
+  'foot:hom': {
+    en: 'Two indistinguishable photons on a 50:50 coupler always leave on the same side',
+    fr: 'Deux photons indiscernables sur un coupleur 50:50 ressortent toujours du même côté',
+    es: 'Dos fotones indistinguibles en un acoplador 50:50 salen siempre por el mismo lado',
+  },
+  // ------------------------------------------------------------ callouts: [name, sub]
+  cLaser: {en: ['Pulsed laser', '80 MHZ · EXCITATION'], fr: ['Laser pulsé', '80 MHZ · EXCITATION'], es: ['Láser pulsado', '80 MHZ · EXCITACIÓN']},
+  cSourceCryo: {en: ['Source cryostat', 'QUANTUM DOT AT 5 K'], fr: ['Cryostat de la source', 'BOÎTE QUANTIQUE À 5 K'], es: ['Criostato de la fuente', 'PUNTO CUÁNTICO A 5 K']},
+  cCompressor: {en: ['Helium compressor', 'CLOSED CYCLE'], fr: ['Compresseur à hélium', 'CYCLE FERMÉ'], es: ['Compresor de helio', 'CICLO CERRADO']},
+  cDemux: {en: ['Demultiplexer', '12 OUTPUTS'], fr: ['Démultiplexeur', '12 SORTIES'], es: ['Demultiplexor', '12 SALIDAS']},
+  cChip: {en: ['Photonic chip', '24 MODES · 276 MZI'], fr: ['Puce photonique', '24 MODES · 276 MZI'], es: ['Chip fotónico', '24 MODOS · 276 MZI']},
+  cSnspdCryo: {en: ['SNSPD cryostat', '24 DETECTORS'], fr: ['Cryostat des SNSPD', '24 DÉTECTEURS'], es: ['Criostato de los SNSPD', '24 DETECTORES']},
+  cTagger: {en: ['Time tagger', 'COINCIDENCES < 1 NS'], fr: ['Horodateur', 'COÏNCIDENCES < 1 NS'], es: ['Etiquetador de tiempo', 'COINCIDENCIAS < 1 NS']},
+  cDot: {en: ['InGaAs quantum dot', 'IN A MICROPILLAR · UNDER THE FERRULE'], fr: ['Boîte quantique InGaAs', 'DANS UN MICROPILIER · SOUS LA FÉRULE'], es: ['Punto cuántico de InGaAs', 'EN UN MICROPILAR · BAJO LA FÉRULA']},
+  cShield: {en: ['Thermal shield', '~50 K'], fr: ['Écran thermique', '~50 K'], es: ['Pantalla térmica', '~50 K']},
+  cColdPlate: {en: ['Cold plate', '4 K · COPPER'], fr: ['Plaque froide', '4 K · CUIVRE'], es: ['Placa fría', '4 K · COBRE']},
+  cFibre: {en: ['Single-mode fibre', 'EXCITATION AND COLLECTION'], fr: ['Fibre monomode', 'EXCITATION ET COLLECTE'], es: ['Fibra monomodo', 'EXCITACIÓN Y RECOGIDA']},
+  cDemuxActive: {en: ['Active demultiplexer', 'ELECTRO-OPTIC MODULATORS'], fr: ['Démultiplexeur actif', 'MODULATEURS ÉLECTRO-OPTIQUES'], es: ['Demultiplexor activo', 'MODULADORES ELECTROÓPTICOS']},
+  cDelay: {en: ['Delay lines', '2.55 M OF FIBRE = 12.5 NS'], fr: ['Lignes à retard', '2,55 M DE FIBRE = 12,5 NS'], es: ['Líneas de retardo', '2,55 M DE FIBRA = 12,5 NS']},
+  cSnspd: {en: ['SNSPD detectors', '24 NANOWIRES · 92 % EFFICIENCY'], fr: ['Détecteurs SNSPD', '24 NANOFILS · EFFICACITÉ 92 %'], es: ['Detectores SNSPD', '24 NANOHILOS · EFICIENCIA 92 %']},
+  cCryoCold: {en: ['Closed-cycle cryostat', 'COLD STAGE ~2.5 K (EST.)'], fr: ['Cryostat à cycle fermé', 'ÉTAGE FROID ~2,5 K (ESTIM.)'], es: ['Criostato de ciclo cerrado', 'ETAPA FRÍA ~2,5 K (EST.)']},
+  cMzi: {en: ['Mach-Zehnder interferometer', '2 COUPLERS · 2 PHASE SHIFTERS'], fr: ['Interféromètre de Mach-Zehnder', '2 COUPLEURS · 2 DÉPHASEURS'], es: ['Interferómetro de Mach-Zehnder', '2 ACOPLADORES · 2 DESFASADORES']},
+  cArray: {en: ['Fibre array', 'EVEN INPUTS · DUAL-RAIL'], fr: ['Barrette de fibres', 'ENTRÉES PAIRES · DOUBLE RAIL'], es: ['Matriz de fibras', 'ENTRADAS PARES · DOBLE RAÍL']},
+  // ------------------------------------------------------------ the live page
+  busy: {en: 'COMPUTING PERMANENTS…', fr: 'CALCUL DES PERMANENTS…', es: 'CALCULANDO PERMANENTES…'},
+  tourOn: {en: 'AUTO TOUR · CLICK TO TAKE OVER', fr: 'VISITE AUTO · CLIQUER POUR PRENDRE LA MAIN', es: 'VISITA AUTOMÁTICA · CLIC PARA TOMAR EL CONTROL'},
+  tourOff: {en: '▶ RESUME THE TOUR', fr: '▶ REPRENDRE LA VISITE', es: '▶ REANUDAR LA VISITA'},
+  turnPhone: {en: 'Turn your phone sideways for the full console', fr: 'Tournez le téléphone pour la console complète', es: 'Gira el teléfono para ver la consola completa'},
+  docTitle: {en: 'Quantum · a photonic quantum computer, taken apart', fr: 'Quantum · un ordinateur quantique photonique, démonté', es: 'Quantum · un ordenador cuántico fotónico, desmontado'},
+  footCredit: {
+    en: 'Modelled on the public figures of Quandela’s Belenos, not affiliated with Quandela',
+    fr: 'D’après les chiffres publics du Belenos de Quandela, sans lien avec Quandela',
+    es: 'Basado en las cifras públicas del Belenos de Quandela, sin relación con Quandela',
+  },
+};
+
+/** the string for key in the page's language; extra arguments fill a templated one */
+export const T = makeT(S);

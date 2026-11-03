@@ -1,0 +1,15 @@
+node_modules/
+dist/
+teardown-out/
+machines/*/teardown-out/
+# study material (photos of real machines, catalogues, papers): not ours to redistribute; each REFERENCES.md links it
+machines/*/ref/
+refs/
+*.mp4
+*.wav
+.DS_Store
+__pycache__/
+
+# launch drafts (social posts, video): private until published
+launch/
+.wrangler/

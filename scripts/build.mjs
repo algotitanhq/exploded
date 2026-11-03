@@ -107,6 +107,10 @@ const write = (rel, html) => {
   console.log(`dist/${rel}  ${(html.length / 1024).toFixed(0)} KB`);
 };
 
+// Cloudflare Web Analytics (no cookie): the beacon on every page but the 404; its host is allowed in the CSP below.
+// The token is public by design, it ends up in the HTML.
+const BEACON = `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "d40db2e4c8384583b627ead20dd0c055"}'></script>`;
+
 fs.rmSync(DIST, {recursive: true, force: true});
 fs.mkdirSync(DIST, {recursive: true});
 
@@ -120,6 +124,7 @@ for (const m of machines) {
 <body>
 <div id="app"></div>
 <script type="module">${js}</script>
+${BEACON}
 </body>
 </html>
 `;
@@ -169,6 +174,7 @@ ${cards}
 </main>
 <footer class="site-foot">${footerHTML('', '', lang)}</footer>
 <script>${LANG_JS}</script>
+${BEACON}
 </body>
 </html>
 `;
@@ -183,11 +189,11 @@ fs.writeFileSync(
 );
 const csp = [
   "default-src 'self'",
-  `script-src 'self' ${[...hashes].map((h) => `'sha256-${h}'`).join(' ')}`,
+  `script-src 'self' https://static.cloudflareinsights.com ${[...hashes].map((h) => `'sha256-${h}'`).join(' ')}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob:",
   "font-src 'self' data:",
-  "connect-src 'self'",
+  "connect-src 'self' https://cloudflareinsights.com",
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",

@@ -57,6 +57,8 @@ const bundle = async (entry) => {
     write: false,
     target: 'es2022',
     legalComments: 'none',
+    // a machine may inline its own type (Rope's and Radial's fonts)
+    loader: {'.woff2': 'base64'},
     logLevel: 'warning',
   });
   return res.outputFiles[0].text.replace(/<\/script/g, '<\\/script');

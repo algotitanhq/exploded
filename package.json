@@ -6,14 +6,16 @@
   "description": "Exploded: real machines, built from code with their real numbers, that you can take apart in the browser.",
   "license": "MIT",
   "scripts": {
-    "check": "node machines/spindl/check.mjs && node machines/quantum/check.mjs && node scripts/test-root-lang.mjs",
+    "check": "node machines/rope/check.mjs && node machines/radial/check.mjs && node machines/pepper/check.mjs && node machines/spindl/check.mjs && node machines/quantum/check.mjs && node scripts/test-root-lang.mjs",
     "build": "node scripts/build.mjs",
     "test": "npm run check && npm run build"
   },
   "dependencies": {
     "@fontsource-variable/inter": "5.3.0",
+    "@fontsource/barlow-condensed": "5.3.0",
     "@fontsource/instrument-serif": "^5.3.0",
     "@fontsource/jetbrains-mono": "5.3.0",
+    "@fontsource/saira-stencil-one": "5.3.0",
     "esbuild": "0.28.1",
     "three": "0.186.1"
   }

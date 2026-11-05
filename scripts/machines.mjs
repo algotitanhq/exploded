@@ -2,6 +2,35 @@
 // its live page's entry point is `entry`, its share card `og` (1200 x 630, also the gallery's thumbnail).
 export const MACHINES = [
   {
+    slug: 'rope',
+    name: 'Rope',
+    entry: 'machines/rope/agc-live/main.js',
+    og: 'machines/rope/og.png',
+    meta: {
+      en: {
+        title: 'Rope · the Apollo Guidance Computer, taken apart',
+        line: 'The Apollo Guidance Computer and its DSKY: a program woven into core rope, one kind of gate, and the 1202 alarm of Apollo 11.',
+        description:
+          'The Apollo Guidance Computer you can take apart in the browser: a word read from the core rope bit by bit, an erasable core read and rewritten, the Executive running out of core sets as the radar steals cycles, the 1202 of Apollo 11. A model after public sources (MIT Instrumentation Lab, NASA); not affiliated with NASA or MIT.',
+        locale: 'en_US',
+      },
+      fr: {
+        title: 'Rope · l’ordinateur de bord d’Apollo, démonté',
+        line: 'L’Apollo Guidance Computer et son DSKY : un programme tissé dans la mémoire à tores, un seul type de porte, et l’alarme 1202 d’Apollo 11.',
+        description:
+          'L’Apollo Guidance Computer à démonter dans le navigateur : un mot lu bit par bit dans la core rope, un tore effaçable lu puis réécrit, l’Executive à court de core sets quand le radar vole des cycles, le 1202 d’Apollo 11. Un modèle d’après les sources publiques (MIT Instrumentation Lab, NASA) ; sans lien avec la NASA ni le MIT.',
+        locale: 'fr_FR',
+      },
+      es: {
+        title: 'Rope · el ordenador de guiado del Apolo, desmontado',
+        line: 'El Apollo Guidance Computer y su DSKY: un programa tejido en memoria de núcleos, un solo tipo de puerta y la alarma 1202 del Apolo 11.',
+        description:
+          'El Apollo Guidance Computer para desmontar en el navegador: una palabra leída bit a bit en la core rope, un núcleo borrable leído y reescrito, el Executive sin core sets mientras el radar roba ciclos, el 1202 del Apolo 11. Un modelo según fuentes públicas (MIT Instrumentation Lab, NASA); sin relación con la NASA ni el MIT.',
+        locale: 'es_ES',
+      },
+    },
+  },
+  {
     slug: 'quantum',
     name: 'Quantum',
     entry: 'machines/quantum/qpu-live/main.js',
@@ -67,7 +96,7 @@ export const GALLERY = {
     lead: 'Real machines, built from code with their real numbers, that you can take apart in the browser.',
     sub: 'Every gauge reads the same model that moves the parts. Left alone, each one plays a guided tour; any click hands control over.',
     open: 'Open',
-    description: 'Real machines, built from code with their real numbers, that you can take apart in the browser: a hard drive, a photonic quantum computer.',
+    description: 'Real machines, built from code with their real numbers, that you can take apart in the browser: a hard drive, a photonic quantum computer, the Apollo Guidance Computer.',
     locale: 'en_US',
   },
   fr: {
@@ -75,7 +104,7 @@ export const GALLERY = {
     lead: 'De vraies machines, construites en code avec leurs vrais chiffres, à démonter dans le navigateur.',
     sub: 'Chaque jauge lit le modèle qui fait bouger les pièces. Laissée seule, chacune joue une visite guidée ; un clic suffit pour prendre la main.',
     open: 'Ouvrir',
-    description: 'De vraies machines, construites en code avec leurs vrais chiffres, à démonter dans le navigateur : un disque dur, un ordinateur quantique photonique.',
+    description: 'De vraies machines, construites en code avec leurs vrais chiffres, à démonter dans le navigateur : un disque dur, un ordinateur quantique photonique, l’ordinateur de bord d’Apollo.',
     locale: 'fr_FR',
   },
   es: {
@@ -83,7 +112,7 @@ export const GALLERY = {
     lead: 'Máquinas reales, construidas en código con sus cifras reales, para desmontar en el navegador.',
     sub: 'Cada indicador lee el mismo modelo que mueve las piezas. Si la dejas sola, cada una hace una visita guiada; cualquier clic te da el control.',
     open: 'Abrir',
-    description: 'Máquinas reales, construidas en código con sus cifras reales, para desmontar en el navegador: un disco duro, un ordenador cuántico fotónico.',
+    description: 'Máquinas reales, construidas en código con sus cifras reales, para desmontar en el navegador: un disco duro, un ordenador cuántico fotónico, el ordenador de guiado del Apolo.',
     locale: 'es_ES',
   },
 };

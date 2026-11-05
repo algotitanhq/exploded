@@ -57,6 +57,7 @@ const bundle = async (entry) => {
     write: false,
     target: 'es2022',
     legalComments: 'none',
+    loader: {'.woff2': 'base64'}, // a machine's own font, as the teardown kit's build loads it
     logLevel: 'warning',
   });
   return res.outputFiles[0].text.replace(/<\/script/g, '<\\/script');

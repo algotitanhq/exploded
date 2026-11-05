@@ -5,12 +5,13 @@ the same model that moves the parts. Left alone, each page plays a guided tour; 
 
 **Live:** <https://exploded.storagebits.workers.dev> (English, French, Spanish).
 
-![Spindl, a hard drive, and Quantum, a photonic quantum computer](static/og.png)
+![Rope, the Apollo Guidance Computer; Radial, an R-2800 radial engine; Pepper, a Curta calculator; Quantum, a photonic quantum computer; Spindl, a hard drive](static/og.png)
 
 ## The machines
 
 | | The machine | What drives it | Checked by |
 |---|---|---|---|
+| [**Rope**](machines/rope) | The Apollo Guidance Computer Block II and its DSKY, as flown in Apollo 11's lunar module: a word read from the core rope (a wire through a core is a 1, around it a 0), an erasable core read and rewritten, one kind of NOR gate, the Executive running out of core sets as the rendezvous radar steals cycles, the 1202. A model after public sources (MIT Instrumentation Lab, NASA); not affiliated with NASA or MIT. | The mission time, counted in memory cycles since PDI. The Executive's log (jobs, priorities, radar steals, the crew's keys) is planned once. | `machines/rope/check.mjs` |
 | [**Radial**](machines/radial) | The Pratt & Whitney R-2800 Double Wasp, an 18-cylinder twin-row radial: the starter, the first firings missed then caught, the firing order going round the star, one row in section with its master rod and eight articulated rods (whose pistons do not quite follow the master's law), the rows pulled apart, a cam ring lifting a valve, the climb to 2,700 rpm. A C-series CB16 after public sources; not affiliated with Pratt & Whitney. | The crank angle, integrated once from a planned run of the engine speed. Power, torque and manifold pressure follow from it. | `machines/radial/check.mjs` |
 | [**Pepper**](machines/pepper) | The Curta Type I, the mechanical calculator that fits in one hand (8 sliders, a 6-digit counter, an 11-digit result): one stepped drum for every column, subtraction by the ten's complement, carries that run column after column, the carriage shifted to multiply, the clearing ring. A model after the public sources; not affiliated with any maker or rights holder. | The cumulative crank angle θ, and the discrete state between turns (sliders, crank up or down, carriage position). A plan of operations (1 234 × 56, one turn back) is laid out once. | `machines/pepper/check.mjs` |
 | [**Quantum**](machines/quantum) | A photonic quantum computer: a quantum dot emits one photon per laser pulse, fibre delay lines bring them onto a 24-mode chip together, 276 Mach-Zehnder interferometers mix them, superconducting detectors click. A Hong-Ou-Mandel test on one coupler, the Perceval program behind the heaters. Modelled on the public figures of Quandela's Belenos; not affiliated with Quandela. | The physical time τ of the shot, in nanoseconds. The output distribution is computed from the permanents of the chip's unitary. | `machines/quantum/check.mjs` |

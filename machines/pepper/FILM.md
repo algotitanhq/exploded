@@ -15,11 +15,11 @@ python3 "$SKILL_DIR/run_sfx.py" curta-shared/score.py   # teardown-out/pepper-sc
 ffmpeg -y -i teardown-out/silent.mp4 -i teardown-out/pepper-score.wav -map 0:v -map 1:a -c:v copy -c:a aac -b:a 256k -shortest -movflags +faststart teardown-out/pepper-en.mp4
 ```
 
-The share card is frame 0 of the film, scaled and cropped to 1200 × 630, without metadata:
+The share card is frame 0 of the film without the sheet, framed on the calculator, 1200 × 630, without metadata:
 
 ```sh
-node "$SKILL_DIR/sims/capture.mjs" curta-film --config /tmp/en.json --size 1600x900 --dpr 1.2 --still 0 --out teardown-out/frame0.png
-ffmpeg -y -i teardown-out/frame0.png -vf "scale=1200:675,crop=1200:630:0:22" -map_metadata -1 og.png
+node "$SKILL_DIR/sims/capture.mjs" curta-film --config /tmp/clean.json --size 1600x900 --dpr 1.2 --still 0 --out teardown-out/frame0.png   # {"lang":"en","clean":true}
+ffmpeg -y -i teardown-out/frame0.png -vf "crop=1600:840:145:80,scale=1200:630" -map_metadata -1 og.png
 ```
 
 On macOS, Playwright's headless shell may get no WebGL context; point the capture at Chrome:

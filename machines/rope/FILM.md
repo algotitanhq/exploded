@@ -15,7 +15,7 @@ python3 "$SKILL_DIR/run_sfx.py" agc-shared/score.py     # teardown-out/rope-scor
 ffmpeg -y -i teardown-out/silent.mp4 -i teardown-out/rope-score.wav -map 0:v -map 1:a -c:v copy -c:a aac -b:a 256k -shortest -movflags +faststart teardown-out/rope-en.mp4
 ```
 
-The share card is the film's first frame, scaled: `ffmpeg -y -i teardown-out/rope-en.mp4 -frames:v 1 -vf "crop=1920:1008:0:36,scale=1200:630" -map_metadata -1 og.png`.
+The share card is the film at 6 s (the trays open) without the console: `node "$SKILL_DIR/sims/capture.mjs" agc-film --config /tmp/clean.json --size 1600x900 --dpr 1.2 --still 6 --out teardown-out/og-src.png` with `{"lang":"en","clean":true}`, then `ffmpeg -y -i teardown-out/og-src.png -vf "crop=iw:iw*630/1200:0:(ih-iw*630/1200)/2,scale=1200:630" -map_metadata -1 og.png`.
 
 On macOS, Playwright's headless shell may get no WebGL context; point the capture at Chrome:
 `CHROMIUM="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"`.

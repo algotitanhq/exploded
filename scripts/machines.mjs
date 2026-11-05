@@ -2,6 +2,35 @@
 // its live page's entry point is `entry`, its share card `og` (1200 x 630, also the gallery's thumbnail).
 export const MACHINES = [
   {
+    slug: 'pepper',
+    name: 'Pepper',
+    entry: 'machines/pepper/curta-live/main.js',
+    og: 'machines/pepper/og.png',
+    meta: {
+      en: {
+        title: 'Pepper · the Curta calculator, taken apart',
+        line: 'The Curta Type I, the mechanical calculator you hold in one hand: one stepped drum, carries that run column after column.',
+        description:
+          'The Curta Type I mechanical calculator to take apart in the browser: one stepped drum for all eight sliders, subtraction by the ten’s complement, carries that run column after column, the carriage that shifts to multiply. A model after the public sources; not affiliated with any maker or rights holder.',
+        locale: 'en_US',
+      },
+      fr: {
+        title: 'Pepper · la calculatrice Curta, démontée',
+        line: 'La Curta Type I, la calculatrice mécanique qui tient dans la main : un seul tambour à gradins, des reports qui passent colonne après colonne.',
+        description:
+          'La calculatrice mécanique Curta Type I à démonter dans le navigateur : un seul tambour à gradins pour les huit curseurs, la soustraction par complément à dix, les reports colonne après colonne, le chariot qui se décale pour multiplier. Modèle d’après les sources publiques ; sans lien avec un fabricant ni un ayant droit.',
+        locale: 'fr_FR',
+      },
+      es: {
+        title: 'Pepper · la calculadora Curta, desmontada',
+        line: 'La Curta Tipo I, la calculadora mecánica que cabe en la mano: un solo tambor escalonado, acarreos que pasan columna tras columna.',
+        description:
+          'La calculadora mecánica Curta Tipo I para desmontar en el navegador: un solo tambor escalonado para los ocho cursores, la resta por complemento a diez, los acarreos columna tras columna, el carro que se desplaza para multiplicar. Modelo según las fuentes públicas; sin relación con ningún fabricante ni titular de derechos.',
+        locale: 'es_ES',
+      },
+    },
+  },
+  {
     slug: 'quantum',
     name: 'Quantum',
     entry: 'machines/quantum/qpu-live/main.js',
@@ -67,7 +96,7 @@ export const GALLERY = {
     lead: 'Real machines, built from code with their real numbers, that you can take apart in the browser.',
     sub: 'Every gauge reads the same model that moves the parts. Left alone, each one plays a guided tour; any click hands control over.',
     open: 'Open',
-    description: 'Real machines, built from code with their real numbers, that you can take apart in the browser: a hard drive, a photonic quantum computer.',
+    description: 'Real machines, built from code with their real numbers, that you can take apart in the browser: a hard drive, a photonic quantum computer, a Curta mechanical calculator.',
     locale: 'en_US',
   },
   fr: {
@@ -75,7 +104,7 @@ export const GALLERY = {
     lead: 'De vraies machines, construites en code avec leurs vrais chiffres, à démonter dans le navigateur.',
     sub: 'Chaque jauge lit le modèle qui fait bouger les pièces. Laissée seule, chacune joue une visite guidée ; un clic suffit pour prendre la main.',
     open: 'Ouvrir',
-    description: 'De vraies machines, construites en code avec leurs vrais chiffres, à démonter dans le navigateur : un disque dur, un ordinateur quantique photonique.',
+    description: 'De vraies machines, construites en code avec leurs vrais chiffres, à démonter dans le navigateur : un disque dur, un ordinateur quantique photonique, une calculatrice mécanique Curta.',
     locale: 'fr_FR',
   },
   es: {
@@ -83,7 +112,7 @@ export const GALLERY = {
     lead: 'Máquinas reales, construidas en código con sus cifras reales, para desmontar en el navegador.',
     sub: 'Cada indicador lee el mismo modelo que mueve las piezas. Si la dejas sola, cada una hace una visita guiada; cualquier clic te da el control.',
     open: 'Abrir',
-    description: 'Máquinas reales, construidas en código con sus cifras reales, para desmontar en el navegador: un disco duro, un ordenador cuántico fotónico.',
+    description: 'Máquinas reales, construidas en código con sus cifras reales, para desmontar en el navegador: un disco duro, un ordenador cuántico fotónico, una calculadora mecánica Curta.',
     locale: 'es_ES',
   },
 };

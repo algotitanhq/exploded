@@ -11,6 +11,7 @@ the same model that moves the parts. Left alone, each page plays a guided tour; 
 
 | | The machine | What drives it | Checked by |
 |---|---|---|---|
+| [**Radial**](machines/radial) | The Pratt & Whitney R-2800 Double Wasp, an 18-cylinder twin-row radial: the starter, the first firings missed then caught, the firing order going round the star, one row in section with its master rod and eight articulated rods (whose pistons do not quite follow the master's law), the rows pulled apart, a cam ring lifting a valve, the climb to 2,700 rpm. A C-series CB16 after public sources; not affiliated with Pratt & Whitney. | The crank angle, integrated once from a planned run of the engine speed. Power, torque and manifold pressure follow from it. | `machines/radial/check.mjs` |
 | [**Pepper**](machines/pepper) | The Curta Type I, the mechanical calculator that fits in one hand (8 sliders, a 6-digit counter, an 11-digit result): one stepped drum for every column, subtraction by the ten's complement, carries that run column after column, the carriage shifted to multiply, the clearing ring. A model after the public sources; not affiliated with any maker or rights holder. | The cumulative crank angle θ, and the discrete state between turns (sliders, crank up or down, carriage position). A plan of operations (1 234 × 56, one turn back) is laid out once. | `machines/pepper/check.mjs` |
 | [**Quantum**](machines/quantum) | A photonic quantum computer: a quantum dot emits one photon per laser pulse, fibre delay lines bring them onto a 24-mode chip together, 276 Mach-Zehnder interferometers mix them, superconducting detectors click. A Hong-Ou-Mandel test on one coupler, the Perceval program behind the heaters. Modelled on the public figures of Quandela's Belenos; not affiliated with Quandela. | The physical time τ of the shot, in nanoseconds. The output distribution is computed from the permanents of the chip's unitary. | `machines/quantum/check.mjs` |
 | [**Spindl**](machines/spindl) | A 3.5-inch 7,200 rpm desktop hard drive (2 platters, 4 heads): spin-up, the heads loading off the ramp, a seek drawn live, the rotational wait, the 3 nm flying height, the emergency park. A model of a typical drive, not a specific product. | The drive time τ. A request queue (LBA → zone, cylinder, head, sector) is planned once. | `machines/spindl/check.mjs` |
@@ -67,8 +68,8 @@ Content-Security-Policy that allows the pages' inline scripts by their hashes, c
 ## Credits
 
 Built with Claude Code (Claude Opus 5.5) and the teardown skill, whose kit, frame capture and sound engine come from
-[whaleyxbt/claude-motion](https://github.com/whaleyxbt/claude-motion) (MIT). three.js (MIT). Inter, JetBrains Mono and
-Instrument Serif (SIL Open Font License).
+[whaleyxbt/claude-motion](https://github.com/whaleyxbt/claude-motion) (MIT). three.js (MIT). Inter, JetBrains Mono,
+Instrument Serif, Barlow Condensed and Saira Stencil One (SIL Open Font License).
 
 ## License
 

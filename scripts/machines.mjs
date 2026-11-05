@@ -2,6 +2,35 @@
 // its live page's entry point is `entry`, its share card `og` (1200 x 630, also the gallery's thumbnail).
 export const MACHINES = [
   {
+    slug: 'radial',
+    name: 'Radial',
+    entry: 'machines/radial/r2800-live/main.js',
+    og: 'machines/radial/og.png',
+    meta: {
+      en: {
+        title: 'Radial · the R-2800 Double Wasp, taken apart',
+        line: 'An 18-cylinder twin-row radial: the starter, the firing order round the star, a master rod and its eight articulated rods, the cam rings, take-off rpm.',
+        description:
+          'The Pratt & Whitney R-2800 Double Wasp you can take apart in the browser: 18 cylinders in two rows, a master rod and eight articulated rods per row, cam rings instead of a camshaft, the run from the starter to 2,700 rpm. A C-series R-2800 after public sources; not affiliated with Pratt & Whitney.',
+        locale: 'en_US',
+      },
+      fr: {
+        title: 'Radial · le R-2800 Double Wasp, démonté',
+        line: 'Un moteur en étoile à 18 cylindres sur deux rangées : le démarreur, l’ordre d’allumage autour de l’étoile, une bielle maîtresse et ses huit biellettes, les anneaux à cames, le régime de décollage.',
+        description:
+          'Le Pratt & Whitney R-2800 Double Wasp à démonter dans le navigateur : 18 cylindres sur deux rangées, une bielle maîtresse et huit biellettes par rangée, des anneaux à cames au lieu d’un arbre à cames, la marche du démarreur à 2 700 tr/min. Un R-2800 de série C d’après les sources publiques ; sans lien avec Pratt & Whitney.',
+        locale: 'fr_FR',
+      },
+      es: {
+        title: 'Radial · el R-2800 Double Wasp, desmontado',
+        line: 'Un motor radial de 18 cilindros en dos filas: el arranque, el orden de encendido alrededor de la estrella, una biela maestra y sus ocho articuladas, los anillos de levas, el régimen de despegue.',
+        description:
+          'El Pratt & Whitney R-2800 Double Wasp para desmontar en el navegador: 18 cilindros en dos filas, una biela maestra y ocho articuladas por fila, anillos de levas en lugar de árbol de levas, la marcha del arranque a 2700 rpm. Un R-2800 de la serie C según fuentes públicas; sin relación con Pratt & Whitney.',
+        locale: 'es_ES',
+      },
+    },
+  },
+  {
     slug: 'pepper',
     name: 'Pepper',
     entry: 'machines/pepper/curta-live/main.js',
@@ -96,7 +125,7 @@ export const GALLERY = {
     lead: 'Real machines, built from code with their real numbers, that you can take apart in the browser.',
     sub: 'Every gauge reads the same model that moves the parts. Left alone, each one plays a guided tour; any click hands control over.',
     open: 'Open',
-    description: 'Real machines, built from code with their real numbers, that you can take apart in the browser: a hard drive, a photonic quantum computer, a Curta mechanical calculator.',
+    description: 'Real machines, built from code with their real numbers, that you can take apart in the browser: a hard drive, a photonic quantum computer.',
     locale: 'en_US',
   },
   fr: {
@@ -104,7 +133,7 @@ export const GALLERY = {
     lead: 'De vraies machines, construites en code avec leurs vrais chiffres, à démonter dans le navigateur.',
     sub: 'Chaque jauge lit le modèle qui fait bouger les pièces. Laissée seule, chacune joue une visite guidée ; un clic suffit pour prendre la main.',
     open: 'Ouvrir',
-    description: 'De vraies machines, construites en code avec leurs vrais chiffres, à démonter dans le navigateur : un disque dur, un ordinateur quantique photonique, une calculatrice mécanique Curta.',
+    description: 'De vraies machines, construites en code avec leurs vrais chiffres, à démonter dans le navigateur : un disque dur, un ordinateur quantique photonique.',
     locale: 'fr_FR',
   },
   es: {
@@ -112,7 +141,7 @@ export const GALLERY = {
     lead: 'Máquinas reales, construidas en código con sus cifras reales, para desmontar en el navegador.',
     sub: 'Cada indicador lee el mismo modelo que mueve las piezas. Si la dejas sola, cada una hace una visita guiada; cualquier clic te da el control.',
     open: 'Abrir',
-    description: 'Máquinas reales, construidas en código con sus cifras reales, para desmontar en el navegador: un disco duro, un ordenador cuántico fotónico, una calculadora mecánica Curta.',
+    description: 'Máquinas reales, construidas en código con sus cifras reales, para desmontar en el navegador: un disco duro, un ordenador cuántico fotónico.',
     locale: 'es_ES',
   },
 };
